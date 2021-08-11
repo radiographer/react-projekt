@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+.App {
+  text-align: center;
+}
+
 li,
 a {
   font-family: "Montserrat", sans-serif;
@@ -17,12 +21,13 @@ a {
 
 .Header {
   background-color: #77a8a8;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 10px 10%;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+  position: fixed;
+  top: 0;
   width: 100%;
 }
 
@@ -47,4 +52,13 @@ a {
 
 .NavLinks li a:hover {
   color: #0088a9;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrap {
+  flex: 1;
 }
