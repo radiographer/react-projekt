@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import main_img from "./images/main.jpg";
+import Button from "@material-ui/core/Button";
+
+import TextField from "@material-ui/core/TextField";
 
 function Home() {
   const BackgroundHome = styled.div`
@@ -18,8 +21,8 @@ function Home() {
     color: white;
     position: center;
     text-align: center;
-    margin-top: 150px;
-    margin-bottom: 100px;
+    margin-top: 130px;
+    margin-bottom: 0px;
   `;
 
   const MainDescr = styled.h1`
@@ -28,18 +31,25 @@ function Home() {
     color: white;
     position: center;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 100px;
+    margin-left: 90px;
+    margin-right: 90px;
+    border-radius: 10px 30px;
+    background-color: rgb(200, 200, 200, 0.5);
   `;
 
   const ButtonSearch = styled.h1`
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    color: white;
-    position: center;
-    text-align: center;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
+
+    border-radius: 10px;
+    background-color: rgb(200, 200, 200, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 300px;
   `;
 
   return (
@@ -49,7 +59,12 @@ function Home() {
         Mental Fitness allows you to achieve peak performance, achieve peace of
         mind and happiness, and build healthy relationships!
       </MainDescr>
-      <ButtonSearch>button and search from Materrial UI</ButtonSearch>
+      <ButtonSearch>
+        <Button variant="contained">Search</Button>
+        <form noValidate autoComplete="off">
+          <TextField variant="outlined" fullWidth />
+        </form>
+      </ButtonSearch>
     </BackgroundHome>
   );
 }
