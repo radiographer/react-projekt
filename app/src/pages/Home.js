@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import main_img from "./images/main.jpg";
-import Button from "@material-ui/core/Button";
-
-import TextField from "@material-ui/core/TextField";
 
 function Home() {
   const BackgroundHome = styled.div`
@@ -59,12 +56,8 @@ function Home() {
         Mental Fitness allows you to achieve peak performance, achieve peace of
         mind and happiness, and build healthy relationships!
       </MainDescr>
-      <ButtonSearch>
-        <Button variant="contained">Search</Button>
-        <form noValidate autoComplete="off">
-          <TextField variant="outlined" fullWidth />
-        </form>
-      </ButtonSearch>
+
+      <ButtonSearch />
     </BackgroundHome>
   );
 }

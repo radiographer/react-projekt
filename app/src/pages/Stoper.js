@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
-function Stoper() {
-  return <div>Stoper</div>;
+function Counter({ defaultValue = 0, step = 1 }) {
+  const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  `;
+
+  const [value, setValue] = useState(defaultValue);
+
+  useEffect(() => {});
+
+  const onMinus = (e) => {
+    setValue(value - step);
+  };
+
+  const onPlus = (e) => {
+    setValue(value + step);
+  };
+  return (
+    <Container>
+      <button onClick={onMinus}>-</button>
+      {value}
+      <button onClick={onPlus}>+</button>
+    </Container>
+  );
 }
 
-export default Stoper;
+export default Counter;

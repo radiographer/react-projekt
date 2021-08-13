@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
 function Counter({ defaultValue = 0, step = 1 }) {
+  const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+  `;
+
   const [value, setValue] = useState(defaultValue);
 
   useEffect(() => {});
@@ -13,11 +21,11 @@ function Counter({ defaultValue = 0, step = 1 }) {
     setValue(value + step);
   };
   return (
-    <div>
+    <Container>
       <button onClick={onMinus}>-</button>
       {value}
       <button onClick={onPlus}>+</button>
-    </div>
+    </Container>
   );
 }
 
