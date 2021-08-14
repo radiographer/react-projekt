@@ -19,18 +19,6 @@ a {
   text-decoration: none;
 }
 
-.Header {
-  background-color: #77a8a8;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px 10%;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
 .HeaderLogo {
   height: 46px;
   width: auto;

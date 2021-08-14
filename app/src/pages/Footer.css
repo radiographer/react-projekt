@@ -1,8 +1,36 @@
-.main-footer {
-  color: white;
-  background-color: #77a8a8;
-  padding-top: 3em;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+li,
+a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.NavLinks {
+  list-style: none;
+}
+
+.NavLinks li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.NavLinks li a {
+  transition: all 0.3s ease 0s;
+}
+
+.NavLinks li a:hover {
+  color: #0088a9;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrap {
+  flex: 1;
 }

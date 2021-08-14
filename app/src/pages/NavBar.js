@@ -1,12 +1,23 @@
 import React from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 import logo from "./images/logo.png";
+
+const Header = styled.div`
+  background-color: #77a8a8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 10%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+`;
 
 const NavBar = () => {
   return (
     <div className="App">
-      <div className="Header">
+      <Header>
         <img className="HeaderLogo" src={logo} alt="logo" />
 
         <ul className="NavLinks">
@@ -32,7 +43,7 @@ const NavBar = () => {
             <Link to="/login">Login</Link>
           </li>
         </ul>
-      </div>
+      </Header>
     </div>
   );
 };
