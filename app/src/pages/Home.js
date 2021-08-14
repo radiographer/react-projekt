@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import main_img from "./images/main.jpg";
+import homeImage from "./images/main.jpg";
+import ButtonSearch from "./components/ButtonSearch";
 
 const BackgroundHome = styled.div`
   border: 1px solid black;
 
-  background-image: url(${main_img});
+  background-image: url(${homeImage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -58,7 +59,7 @@ function Home() {
         mind and happiness, and build healthy relationships!
       </MainDescr>
 
-      {/* <ButtonSearch /> */}
+      <ButtonSearch />
     </BackgroundHome>
   );
 }

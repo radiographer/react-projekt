@@ -13,7 +13,8 @@ const MainFooter = styled.div`
   color: white;
   background-color: #77a8a8;
   padding-top: 3em;
-
+  display: flex;
+  justify-content: space-around;
   bottom: 0;
   width: 100%;
 `;
@@ -22,6 +23,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  display: inline-block;
+  justify-content: flex-start;
 `;
 
 const Description = styled.div`
@@ -41,7 +45,7 @@ function Footer() {
           <li>
             <FaceIcon style={{ fontSize: 55 }} />
             <Link to="/about">About me</Link>
-            <Description>Description </Description>
+            <Description>Description</Description>
           </li>
           <li>
             <TimerIcon style={{ fontSize: 55 }} />

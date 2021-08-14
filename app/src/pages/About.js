@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import rickImage from "./images/rick.png";
 
+const AboutImage = styled.div`
+  height: 30px;
+  width: 30px;
+`;
 const Container = styled.div`
   display: flex;
+
   justify-content: center;
   align-items: center;
   min-height: 80vh;
@@ -16,7 +22,12 @@ function About(props) {
 
   const value = { text: "Cześć to ja! Rick" };
 
-  return <Container>{value.text}</Container>;
+  return (
+    <Container>
+      <AboutImage src={rickImage} />
+      {value.text}
+    </Container>
+  );
 }
 
 export default About;
