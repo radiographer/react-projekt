@@ -20,7 +20,7 @@ function About(props) {
 
   // useEffect(() => {});
 
-  const value = { text: "Cześć to ja! Rick" };
+  const value = { text: "Hi, it's me Rick!" };
 
   return (
     <Container>
