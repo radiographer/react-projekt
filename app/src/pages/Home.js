@@ -16,7 +16,7 @@ const BackgroundHome = styled.div`
 const MainTitle = styled.h1`
   font-family: "Montserrat", sans-serif;
   font-size: 70px;
-  color: #0088a9;
+  color: #024f49;
   position: center;
   text-align: center;
   margin-top: 130px;
@@ -26,7 +26,7 @@ const MainTitle = styled.h1`
 const MainDescr = styled.h1`
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  color: white;
+  color: #057676;
   position: center;
   text-align: center;
   margin-top: 0px;
