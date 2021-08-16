@@ -1,43 +1,41 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid, TextField, Button } from "@material-ui/core";
+import { createStyles, alpha, makeStyles } from "@material-ui/core/styles";
+import InputBase from "@material-ui/core/InputBase";
+import { Button } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
-export default function App() {
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    search: {
+      position: "center",
+      borderRadius: theme.shape.borderRadius,
+      backgroundColor: alpha(theme.palette.common.white, 0.35),
+      "&:hover": {
+        backgroundColor: alpha(theme.palette.common.white, 0.45),
+      },
+
+      minWidth: 200,
+    },
+    button: {
+      color: "white",
+
+      backgroundColor: "#77a8a8",
+      "&:hover": {
+        backgroundColor: alpha(theme.palette.common.white, 0.45),
+      },
+    },
+    box: {
+      display: "flex",
+      justifyContent: "center",
+    },
+  })
+);
+
+export default function Search() {
+  const classes = useStyles();
   return (
-    <Grid
-      container
-      display="flex"
-      justify="center"
-      alignItems="center"
-      direction="column"
-      style={{ minHeight: "100vh" }}
-      spacing={5}
-    >
-      <Grid item style={{ border: "0.2px solid gray" }}>
-        <ButtonSearch />
-      </Grid>
-    </Grid>
+    <Box className={classes.box}>
+      <Button className={classes.button}>Search</Button>
+      <InputBase className={classes.search} />
+    </Box>
   );
 }
-
-const ButtonSearch = () => {
-  return (
-    <Grid
-      container
-      display="flex"
-      justify="center"
-      alignItems="center"
-      direction="column"
-    >
-      <Button size="large" variant="contained" color="primary">
-        Search
-      </Button>
-      <TextField
-        variant="outlined"
-        label="Search"
-        fullWidth
-        style={{ marginTop: "2em" }}
-      />
-    </Grid>
-  );
-};
