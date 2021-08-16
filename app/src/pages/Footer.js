@@ -16,14 +16,19 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "#77a8a8",
+    backgroundColor: "#0088a9",
     minWidth: 275,
+    paddingBottom: 24,
+    paddingTop: 24,
   },
   paper: {
     padding: theme.spacing(1),
     textAlign: "center",
     color: "white",
     backgroundColor: "#77a8a8",
+    marginLeft: 24,
+    marginTop: 24,
+    marginBottom: 34,
   },
 
   ico: {

@@ -1,11 +1,12 @@
 import React from "react";
-
+import { makeStyles } from "@material-ui/core/styles";
 import { Grid, TextField, Button } from "@material-ui/core";
 
 export default function App() {
   return (
     <Grid
       container
+      display="flex"
       justify="center"
       alignItems="center"
       direction="column"
@@ -21,7 +22,13 @@ export default function App() {
 
 const ButtonSearch = () => {
   return (
-    <Grid container direction="column" alignItems="center" justify="center">
+    <Grid
+      container
+      display="flex"
+      justify="center"
+      alignItems="center"
+      direction="column"
+    >
       <Button size="large" variant="contained" color="primary">
         Search
       </Button>
