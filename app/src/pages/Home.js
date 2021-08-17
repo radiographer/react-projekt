@@ -39,7 +39,7 @@ const MainDescr = styled.h1`
 
 function Home() {
   return (
-    <BackgroundHome>
+    <BackgroundHome style={{ maxHeight: 200, overflow: "auto" }}>
       <MainTitle>WE DESIGN YOUR MIND</MainTitle>
       <MainDescr>
         Mental Fitness allows you to achieve peak performance, achieve peace of
