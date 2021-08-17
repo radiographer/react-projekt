@@ -11,7 +11,7 @@ const Image = styled.div`
   height: 300px;
 `;
 const Container = styled.div`
-  background-color: #5cbdb2;
+  background-color: #dbf1ee;
   display: flex;
   flex-direction: column;
   justify-content: center;
