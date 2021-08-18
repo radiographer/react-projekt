@@ -22,18 +22,22 @@ const useStyles = makeStyles(() => ({
     fontStyle: "italic",
     textDecoration: "none",
   },
-  result: {
-    backgroundColor: "white",
-    border: "1px solid",
-    borderRadius: 5,
-    width: 100,
-    fontFamily: "Montserrat",
-    fontSize: 20,
-    fontWeight: 500,
-    fontStyle: "italic",
-    textDecoration: "none",
-  },
 }));
+
+const Result = styled.div`
+  background: white;
+  border: 1px solid;
+  border-radius: 5px;
+  width: 100px;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500px;
+  font-style: "italic";
+  text-decoration: "none";
+  text-align: center;
+  color: ${({ number }) =>
+    number % 5 === 0 && number !== 0 ? "green" : "black"};
+`;
 
 function Counter({ defaultValue = 0, step = 1 }) {
   const [value, setValue] = useState(defaultValue);
@@ -59,7 +63,7 @@ function Counter({ defaultValue = 0, step = 1 }) {
         <Button className={classes.button} onClick={onPlus}>
           plus 1
         </Button>
-        <div className={classes.result}>{value}</div>
+        <Result number={value}>{value}</Result>
         <Button className={classes.button} onClick={onMinus}>
           minus 1
         </Button>
