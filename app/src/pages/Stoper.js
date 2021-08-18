@@ -78,10 +78,12 @@ const Stoper = () => {
 
   const onStartValue = (e) => {
     console.log("startValue", startValue);
+    setSeconds(startValue);
   };
 
   const onIntervalValue = (e) => {
     console.log("intervalValue", intervalValue);
+    setInterval(intervalValue);
   };
 
   return (
