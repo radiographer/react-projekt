@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CharacterCard from "./components/CharacterCard";
 import Pagination from "./components/Pagination";
 import styled from "styled-components";
+import { data } from "browserslist";
 
 const List = styled.button`
   padding-top: 200px;
@@ -46,18 +47,21 @@ function App() {
   }
   if (loading) return "Loading...";
 
-  const charList = characters.map((char) => (
-    <CharacterCard
-      key={Math.floor(Math.random() * 10000)}
-      name={char.name}
-      img={char.image}
-      species={char.species}
-      status={char.status}
-    />
-  ));
+  const charList = characters
+    .filter((item, index) => index < 8)
+    .map((char) => (
+      <CharacterCard
+        key={Math.floor(Math.random() * 10000)}
+        name={char.name}
+        img={char.image}
+        species={char.species}
+        status={char.status}
+      />
+    ));
 
   return (
     <List>
+      <h3>obecnie wyświetlana strona to: {} </h3>
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
         prevPage={prevPageUrl ? prevPage : null}
