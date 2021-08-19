@@ -1,4 +1,12 @@
 import React from "react";
+import styled from "styled-components";
+
+const Buttons = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+`;
+
 const Pagination = ({ nextPage, prevPage, goToPage, pages }) => {
   let pageButtons = [];
   for (let i = 1; i <= pages; i++) {
@@ -9,17 +17,11 @@ const Pagination = ({ nextPage, prevPage, goToPage, pages }) => {
     );
   }
   return (
-    <div className="buttons">
+    <Buttons>
       {prevPage && <button onClick={prevPage}>Previous</button>}
       {pageButtons}
       {nextPage && <button onClick={nextPage}>Next</button>}
-    </div>
+    </Buttons>
   );
 };
 export default Pagination;
-
-// .buttons {
-//   display: flex;
-//   justify-content: center;
-//   margin-bottom: 20px;
-// }

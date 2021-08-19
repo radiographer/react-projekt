@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 import CharacterCard from "./components/CharacterCard";
 import Pagination from "./components/Pagination";
 import styled from "styled-components";
-import { data } from "browserslist";
 
 const List = styled.button`
   padding-top: 200px;
   padding-bottom: 100px;
+`;
+
+const CharCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `;
 
 function App() {
@@ -68,7 +74,7 @@ function App() {
         goToPage={goToPage}
         pages={pages}
       />
-      <div className="char-cards">{charList}</div>
+      <CharCards>{charList}</CharCards>
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
         prevPage={prevPageUrl ? prevPage : null}

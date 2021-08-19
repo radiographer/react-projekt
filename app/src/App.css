@@ -12,21 +12,3 @@ a {
   color: #edf0f1;
   text-decoration: none;
 }
-
-.char-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
