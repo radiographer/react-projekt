@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CharacterCard from "./components/CharacterCard";
 import Pagination from "./components/Pagination";
+import CurrentPageInfo from "./components/CurrentPageNumber";
 import styled from "styled-components";
 
 const List = styled.button`
@@ -33,7 +34,9 @@ function App() {
     const fetchData = async () => {
       const res = await fetch(url);
       const data = await res.json();
+      console.log("data", data);
       setCharacters(data.results);
+
       setLoading(false);
       setNextPageUrl(data.info.next);
       setPrevPageUrl(data.info.prev);
@@ -69,7 +72,7 @@ function App() {
 
   return (
     <List>
-      <div>obecnie wyświetlana strona to: {page} </div>
+      <CurrentPageInfo page={page} />
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
         prevPage={prevPageUrl ? prevPage : null}
