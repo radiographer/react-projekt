@@ -10,7 +10,6 @@ import Counter from "./pages/Counter";
 import Characters from "./pages/Characters";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import CharacterCard from "./pages/CharacterCard";
 
 function App() {
   return (
@@ -40,9 +39,6 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login />
-            </Route>
-            <Route exact path="/temp">
-              <CharacterCard />
             </Route>
           </Switch>
           <Footer />

@@ -67,21 +67,13 @@ function NestedGrid() {
 
             <CardActions className={classes.action}>
               <Button size="small">
-                <Link to="/about">About me</Link>
+                <Link to="/about">About us</Link>
               </Button>
             </CardActions>
 
             <Typography className={classes.desc}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum{" "}
+              Do you want to learn more about our outstanding specialist who
+              will change your life?
             </Typography>
           </Paper>
         </Grid>
@@ -98,16 +90,7 @@ function NestedGrid() {
             </CardActions>
 
             <Typography className={classes.desc}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum{" "}
+              Check now how much time is left until your enlightenment.
             </Typography>
           </Paper>
         </Grid>
@@ -124,16 +107,8 @@ function NestedGrid() {
             </CardActions>
 
             <Typography className={classes.desc}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum{" "}
+              Solve a qualifying problem. What type is this number displayed in
+              green?
             </Typography>
           </Paper>
         </Grid>
@@ -150,16 +125,7 @@ function NestedGrid() {
             </CardActions>
 
             <Typography className={classes.desc}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum{" "}
+              Choose the character you want to become.
             </Typography>
           </Paper>
         </Grid>
@@ -176,16 +142,7 @@ function NestedGrid() {
             </CardActions>
 
             <Typography className={classes.desc}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum{" "}
+              Create an account and enjoy access to our unique resources.
             </Typography>
           </Paper>
         </Grid>
@@ -202,16 +159,7 @@ function NestedGrid() {
             </CardActions>
 
             <Typography className={classes.desc}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum{" "}
+              If you already have an account, log in immediately.
             </Typography>
           </Paper>
         </Grid>

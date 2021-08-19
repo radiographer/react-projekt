@@ -1,36 +1,11 @@
-// import React, { useState, useEffect } from "react";
-// import ListaPostaci from "./components/ListaPostaci";
-
-// function App() {
-//   const [postaci, setPostaci] = useState(null);
-
-//   useEffect(() => {
-//     fetch("https://rickandmortyapi.com/api/character")
-//       .then((response) => response.json())
-//       .then(setPostaci);
-//   }, []);
-
-//   if (!postaci) {
-//     return <div className="App">Brak danych z backandu</div>;
-//   }
-//   return (
-//     <div className="App">
-//       <ListaPostaci postaci={postaci} />
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import "../App.css";
 import React, { useState, useEffect } from "react";
-import Character from "./components/Character";
+import CharacterCard from "./components/CharacterCard";
 import Pagination from "./components/Pagination";
 import styled from "styled-components";
 
-const Container = styled.div`
-  background-color: #dbf1ee;
-  margin-top: 200;
+const List = styled.button`
+  padding-top: 200px;
+  padding-bottom: 100px;
 `;
 
 function App() {
@@ -72,15 +47,23 @@ function App() {
   if (loading) return "Loading...";
 
   const charList = characters.map((char) => (
-    <Character
+    <CharacterCard
       key={Math.floor(Math.random() * 10000)}
       name={char.name}
       img={char.image}
+      species={char.species}
+      status={char.status}
     />
   ));
 
   return (
-    <Container>
+    <List>
+      <Pagination
+        nextPage={nextPageUrl ? nextPage : null}
+        prevPage={prevPageUrl ? prevPage : null}
+        goToPage={goToPage}
+        pages={pages}
+      />
       <div className="char-cards">{charList}</div>
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
@@ -88,7 +71,7 @@ function App() {
         goToPage={goToPage}
         pages={pages}
       />
-    </Container>
+    </List>
   );
 }
 

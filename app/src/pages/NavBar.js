@@ -35,7 +35,7 @@ function NavBar() {
             </Button>
 
             <Button size="small" style={{ textTransform: "none" }}>
-              <Link to="/about">About me</Link>
+              <Link to="/about">About</Link>
             </Button>
             <Button size="small" style={{ textTransform: "none" }}>
               <Link to="/counter">Counter</Link>
@@ -54,9 +54,6 @@ function NavBar() {
 
             <Button size="small" style={{ textTransform: "none" }}>
               <Link to="/login">Login</Link>
-            </Button>
-            <Button size="small" style={{ textTransform: "none" }}>
-              <Link to="/temp">Temp</Link>
             </Button>
           </div>
         </Toolbar>
