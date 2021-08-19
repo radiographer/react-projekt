@@ -37,13 +37,11 @@ function NavBar() {
             <Button size="small" style={{ textTransform: "none" }}>
               <Link to="/about">About me</Link>
             </Button>
-
-            <Button size="small" style={{ textTransform: "none" }}>
-              <Link to="/stoper">Stoper</Link>
-            </Button>
-
             <Button size="small" style={{ textTransform: "none" }}>
               <Link to="/counter">Counter</Link>
+            </Button>
+            <Button size="small" style={{ textTransform: "none" }}>
+              <Link to="/stoper">Stoper</Link>
             </Button>
 
             <Button size="small" style={{ textTransform: "none" }}>

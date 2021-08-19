@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Box, Grid, Input } from "@material-ui/core";
+import { Button, Box, Input } from "@material-ui/core";
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -48,14 +48,15 @@ const Stoper = () => {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [startValue, setStartValue] = useState();
-  const [intervalValue, setIntervaltValue] = useState();
+  const [intervalValue, setIntervaltValue] = useState(1);
   const classes = useStyles();
 
   useEffect(() => {
     let interval = null;
+    let add = Math.floor(intervalValue);
     if (isActive) {
       interval = setInterval(() => {
-        setSeconds((seconds) => seconds + 1);
+        setSeconds((seconds) => seconds + add);
       }, 1000);
     } else if (!isActive && seconds !== 0) {
       clearInterval(interval);
@@ -77,13 +78,12 @@ const Stoper = () => {
   };
 
   const onStartValue = (e) => {
-    console.log("startValue", startValue);
-    setSeconds(startValue);
+    setSeconds(Math.floor(startValue));
   };
 
-  const onIntervalValue = (e) => {
+  const onIntervalValue = () => {
     console.log("intervalValue", intervalValue);
-    setInterval(intervalValue);
+    setInterval(Math.floor(intervalValue));
   };
 
   return (
@@ -104,10 +104,17 @@ const Stoper = () => {
       </Button>
       <Box>
         {" "}
-        <Button className={classes.button} onClick={() => onStartValue()}>
+        <Button
+          value={0}
+          className={classes.button}
+          onClick={() => onStartValue()}
+        >
           set start value
         </Button>
-        <Input onChange={(e) => setStartValue(e.target.value)}></Input>
+        <Input
+          type="number"
+          onChange={(e) => setStartValue(e.target.value)}
+        ></Input>
       </Box>
 
       <Box>
@@ -115,7 +122,10 @@ const Stoper = () => {
         <Button className={classes.button} onClick={() => onIntervalValue()}>
           set interval value
         </Button>
-        <Input onChange={(e) => setIntervaltValue(e.target.value)}></Input>
+        <Input
+          type="number"
+          onChange={(e) => setIntervaltValue(e.target.value)}
+        ></Input>
       </Box>
     </div>
   );
