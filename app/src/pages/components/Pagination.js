@@ -7,7 +7,7 @@ const Buttons = styled.div`
   margin-bottom: 20px;
 `;
 
-const Pagination = ({ nextPage, prevPage, goToPage, pages }) => {
+const Pagination = ({ nextPage, prevPage, goToPage, pages, num }) => {
   let pageButtons = [];
   for (let i = 1; i <= pages; i++) {
     pageButtons.push(

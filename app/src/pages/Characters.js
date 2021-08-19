@@ -25,6 +25,7 @@ function App() {
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
   const [pages, setPages] = useState();
+  const [page, setPage] = useState();
 
   useEffect(() => {
     const url = currentPageUrl;
@@ -37,6 +38,7 @@ function App() {
       setNextPageUrl(data.info.next);
       setPrevPageUrl(data.info.prev);
       setPages(data.info.pages);
+      setPage(data.page);
     };
     fetchData();
   }, [currentPageUrl]);
@@ -67,7 +69,7 @@ function App() {
 
   return (
     <List>
-      <h3>obecnie wyświetlana strona to: {} </h3>
+      <div>obecnie wyświetlana strona to: {page} </div>
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
         prevPage={prevPageUrl ? prevPage : null}
