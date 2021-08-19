@@ -55,6 +55,9 @@ function NavBar() {
             <Button size="small" style={{ textTransform: "none" }}>
               <Link to="/login">Login</Link>
             </Button>
+            <Button size="small" style={{ textTransform: "none" }}>
+              <Link to="/temp">Temp</Link>
+            </Button>
           </div>
         </Toolbar>
       </AppBar>
