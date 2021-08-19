@@ -26,7 +26,7 @@ function App() {
   const [nextPageUrl, setNextPageUrl] = useState();
   const [prevPageUrl, setPrevPageUrl] = useState();
   const [pages, setPages] = useState();
-  const [page, setPage] = useState();
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const url = currentPageUrl;
@@ -53,8 +53,8 @@ function App() {
     setCurrentPageUrl(prevPageUrl);
   }
 
-  function goToPage(num) {
-    setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`);
+  function goToPage(page) {
+    setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${page}`);
   }
   if (loading) return "Loading...";
 
