@@ -24,11 +24,13 @@ const useStyles = makeStyles(() => ({
   },
 
   box: {
-    // display: "flex",
-
-    // justifyContent: "evenly",
-    // alignItems: "center",
     position: "center",
+    marginLeft: 60,
+  },
+  input: {
+    border: "solid 1px",
+    borderRadius: 5,
+    backgroundColor: "white",
   },
 }));
 
@@ -98,12 +100,10 @@ const Stoper = () => {
           stop
         </Button>
       </Box>
-
       <Button className={classes.button} onClick={onReset}>
         Reset
-      </Button>
-      <Box>
-        {" "}
+      </Button>{" "}
+      <Box className={classes.box}>
         <Button
           value={0}
           className={classes.button}
@@ -112,17 +112,17 @@ const Stoper = () => {
           set start value
         </Button>
         <Input
+          className={classes.input}
           type="number"
           onChange={(e) => setStartValue(e.target.value)}
-        ></Input>
+        ></Input>{" "}
       </Box>
-
-      <Box>
-        {" "}
+      <Box className={classes.box}>
         <Button className={classes.button} onClick={() => onIntervalValue()}>
           set interval value
         </Button>
         <Input
+          className={classes.input}
           type="number"
           onChange={(e) => setIntervaltValue(e.target.value)}
         ></Input>
