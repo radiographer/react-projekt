@@ -54,7 +54,7 @@ function App() {
   if (loading) return "Loading...";
 
   const charList = characters
-    .filter((item, index) => index < 8)
+    // .filter((item, index) => index < 8)
     .map((char) => (
       <CharacterCard
         key={Math.floor(Math.random() * 10000)}
