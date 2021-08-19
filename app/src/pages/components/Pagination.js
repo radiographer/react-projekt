@@ -17,3 +17,9 @@ const Pagination = ({ nextPage, prevPage, goToPage, pages }) => {
   );
 };
 export default Pagination;
+
+// .buttons {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 20px;
+// }
