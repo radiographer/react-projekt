@@ -1,31 +1,28 @@
-// import React from "react";
-// import { makeStyles, Box } from "@material-ui/core";
+import React from "react";
+import styled from "styled-components";
 
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+const Container = styled.div`
+  background-color: #dbf1ee;
 
-// const useStyles = makeStyles({
-//   root: {
-//     marginTop: 500,
-//     height: 345,
-//     padding: 20,
-//     margin: 10,
-//   },
-// });
+  min-height: 80vh;
+  font-size: 40px;
+  padding-left: 20vw;
+  padding-right: 20vw;
+`;
 
-// function LearnMore() {
-//   const classes = useStyles();
+function LearnMore() {
+  // The <Route> that rendered this component has a
+  // path of `/topics/:topicId`. The `:topicId` portion
+  // of the URL indicates a placeholder that we can
+  // get from `useParams()`.
+  let { name, id } = useParams();
 
-//   // The <Route> that rendered this component has a
-//   // path of `/topics/:topicId`. The `:topicId` portion
-//   // of the URL indicates a placeholder that we can
-//   // get from `useParams()`.
-//   let { name, id } = useParams();
+  return (
+    <Container>
+      <h3>{("name", { name }, "id", { id })}</h3>
+    </Container>
+  );
+}
 
-//   return (
-//     <Box className={classes.root}>
-//       <h3>{("name", { name }, "id", { id })}</h3>
-//     </Box>
-//   );
-// }
-
-// export default LearnMore;
+export default LearnMore;

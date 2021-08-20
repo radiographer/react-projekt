@@ -9,7 +9,6 @@ import {
 
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Link,
   useRouteMatch,
@@ -36,7 +35,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard({ name, img, species, status, id }) {
   const classes = useStyles();
-  let { path, url } = useRouteMatch();
+  let { url, path } = useRouteMatch();
   return (
     <Card className={classes.root}>
       <CardMedia
@@ -56,30 +55,13 @@ export default function MediaCard({ name, img, species, status, id }) {
         </Typography>
       </CardContent>
 
-      <Link className={classes.link} to={`${name}/${id}/`}>
-        link
+      <Link className={classes.link} to={`${url}/${name}/${id}/`}>
+        LearnMore
       </Link>
-      <Switch>
-        <Route exact path={path}></Route>
-        <Route path={`${path}/name/:id/`}>
-          <Topic />
-        </Route>
-      </Switch>
-    </Card>
-  );
-}
-function Topic() {
-  // The <Route> that rendered this component has a
-  // path of `/topics/:topicId`. The `:topicId` portion
-  // of the URL indicates a placeholder that we can
-  // get from `useParams()`.
-  let { name, id } = useParams();
 
-  return (
-    <div>
-      <h3>
-        {name}, {id} jfdjfhkdjfh
-      </h3>
-    </div>
+      <Route path={`${path}/name/:id`}>
+        <LearnMore />
+      </Route>
+    </Card>
   );
 }

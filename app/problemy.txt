@@ -1,0 +1,7 @@
+- input select
+- switch z material ui alfabetycznie
+
+- brak wyswietlania aktualnej strony
+- nie wyswietla sie id poprawnie w nested routing w adresie strony
+- nie widac renderowanej strony, ale jak sie wyrendruje to użyć useHistory i wypisac kilka cech postaci
+- login i register
