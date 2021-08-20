@@ -3,6 +3,9 @@ import CharacterCard from "./components/CharacterCard";
 import Pagination from "./components/Pagination";
 import CurrentPageInfo from "./components/CurrentPageNumber";
 import styled from "styled-components";
+import SelectInput from "./components/SelectInput";
+
+x;
 
 const List = styled.button`
   padding-top: 200px;
@@ -72,6 +75,7 @@ function App() {
 
   return (
     <List>
+      <SelectInput />
       <CurrentPageInfo page={page} />
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}
