@@ -5,8 +5,6 @@ import CurrentPageInfo from "./components/CurrentPageNumber";
 import styled from "styled-components";
 import SelectInput from "./components/SelectInput";
 
-x;
-
 const List = styled.button`
   padding-top: 200px;
   padding-bottom: 100px;
