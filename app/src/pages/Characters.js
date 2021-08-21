@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+
+import styled from "styled-components";
+
 import CharacterCard from "./components/CharacterCard";
 import Pagination from "./components/Pagination";
 import CurrentPageInfo from "./components/CurrentPageNumber";
-import styled from "styled-components";
 import SelectInput from "./components/SelectInput";
+import SwitchAZ from "./components/SwitchAZ";
 
 const List = styled.button`
   padding-top: 200px;
@@ -59,20 +62,19 @@ function App() {
   }
   if (loading) return "Loading...";
 
-  const charList = characters
-    // .filter((item, index) => index < 8)
-    .map((char) => (
-      <CharacterCard
-        key={Math.floor(Math.random() * 10000)}
-        name={char.name}
-        img={char.image}
-        species={char.species}
-        status={char.status}
-      />
-    ));
+  const charList = characters.map((char) => (
+    <CharacterCard
+      key={Math.floor(Math.random() * 10000)}
+      name={char.name}
+      img={char.image}
+      species={char.species}
+      status={char.status}
+    />
+  ));
 
   return (
     <List>
+      <SwitchAZ />
       <SelectInput />
       <CurrentPageInfo page={page} />
       <Pagination

@@ -1,6 +1,5 @@
 import { createStyles, alpha, makeStyles } from "@material-ui/core/styles";
-import InputBase from "@material-ui/core/InputBase";
-import { Button, Box } from "@material-ui/core";
+import { Button, Box, InputBase } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) =>
   createStyles({

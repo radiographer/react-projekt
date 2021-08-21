@@ -12,7 +12,6 @@ import {
   Route,
   Link,
   useRouteMatch,
-  useParams,
 } from "react-router-dom";
 
 import LearnMore from "../LearnMore";

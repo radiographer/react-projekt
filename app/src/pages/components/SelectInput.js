@@ -1,26 +1,49 @@
 import React from "react";
-import Select from "react-select";
-import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => ({
-  input: {
-    width: 200,
+import {
+  MenuItem,
+  FormControl,
+  Select,
+  FormLabel,
+  makeStyles,
+} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 }));
 
-const options = [
-  { value: "alive", label: "Alive" },
-  { value: "dead", label: "Dead" },
-  { value: "unknown", label: "Other" },
-];
-
-function SelectInput() {
+export default function SelectInput() {
   const classes = useStyles();
+  const [species, setSpecies] = React.useState("");
+
+  const handleChange = (event) => {
+    setSpecies(event.target.value);
+  };
+
   return (
     <div>
-      <Select className={classes.input} options={options} />
+      <FormControl
+        variant="outlined"
+        size="small"
+        className={classes.formControl}
+      >
+        <FormLabel component="legend">sort by species</FormLabel>
+
+        <Select value={species} onChange={handleChange} label="species">
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={1}>Alive</MenuItem>
+          <MenuItem value={2}>Dead</MenuItem>
+          <MenuItem value={3}>Other</MenuItem>
+        </Select>
+      </FormControl>
     </div>
   );
 }
-
-export default SelectInput;
