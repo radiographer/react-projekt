@@ -6,8 +6,7 @@ const CurrentPageInfo = ({ page }) => {
   return (
     <div>
       {" "}
-      <FormLabel component="legend">current page</FormLabel>
-      {page}
+      <FormLabel component="legend">current page is: {page}.</FormLabel>
     </div>
   );
 };

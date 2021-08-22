@@ -31,6 +31,7 @@ function App() {
   const [prevPageUrl, setPrevPageUrl] = useState();
   const [pages, setPages] = useState();
   const [page, setPage] = useState(1);
+  const [statusFromSelectInput, setStatusFromSelectInput] = useState(null);
 
   useEffect(() => {
     const url = currentPageUrl;
@@ -45,7 +46,6 @@ function App() {
       setNextPageUrl(data.info.next);
       setPrevPageUrl(data.info.prev);
       setPages(data.info.pages);
-      setPage(data.page);
     };
     fetchData();
   }, [currentPageUrl]);
@@ -59,23 +59,33 @@ function App() {
 
   function goToPage(page) {
     setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${page}`);
+    setPage(page);
   }
   if (loading) return "Loading...";
 
-  const charList = characters.map((char) => (
-    <CharacterCard
-      key={Math.floor(Math.random() * 10000)}
-      name={char.name}
-      img={char.image}
-      species={char.species}
-      status={char.status}
-    />
-  ));
+  const charList = characters
+    .filter((char) => {
+      return statusFromSelectInput == null
+        ? true
+        : statusFromSelectInput == char.status;
+    })
+    .map((char) => (
+      <CharacterCard
+        key={Math.floor(Math.random() * 10000)}
+        name={char.name}
+        img={char.image}
+        species={char.species}
+        status={char.status}
+      />
+    ));
 
   return (
     <List>
       <SwitchAZ />
-      <SelectInput />
+      <SelectInput
+        status={statusFromSelectInput}
+        handleStatus={setStatusFromSelectInput}
+      />
       <CurrentPageInfo page={page} />
       <Pagination
         nextPage={nextPageUrl ? nextPage : null}

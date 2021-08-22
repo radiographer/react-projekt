@@ -12,6 +12,15 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 
 function App() {
+  const myDBjson = [
+    {
+      name: "Mateusz",
+      lastName: "Gabriel",
+      email: "test@test.pl",
+      password: "haslo123",
+    },
+  ];
+
   return (
     <div className="page-container">
       <div className="content-wrap">
@@ -35,10 +44,10 @@ function App() {
               <Characters />
             </Route>
             <Route exact path="/register">
-              <Register />
+              <Register data={myDBjson} />
             </Route>
             <Route exact path="/login">
-              <Login />
+              <Login data={myDBjson} />
             </Route>
           </Switch>
           <Footer />

@@ -18,14 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SelectInput() {
+export default function SelectInput({ status, handleStatus }) {
   const classes = useStyles();
-  const [species, setSpecies] = React.useState("");
-
-  const handleChange = (event) => {
-    setSpecies(event.target.value);
+  const handlerOnChange = (event) => {
+    handleStatus(event.target.value);
   };
-
   return (
     <div>
       <FormControl
@@ -33,15 +30,13 @@ export default function SelectInput() {
         size="small"
         className={classes.formControl}
       >
-        <FormLabel component="legend">sort by species</FormLabel>
+        <FormLabel component="legend">filter by status</FormLabel>
 
-        <Select value={species} onChange={handleChange} label="species">
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={1}>Alive</MenuItem>
-          <MenuItem value={2}>Dead</MenuItem>
-          <MenuItem value={3}>Other</MenuItem>
+        <Select onChange={handlerOnChange} label="status" value={status}>
+          <MenuItem value={null}>All</MenuItem>
+          <MenuItem value={"Alive"}>Alive</MenuItem>
+          <MenuItem value={"Dead"}>Dead</MenuItem>
+          <MenuItem value={"unknown"}>Other</MenuItem>
         </Select>
       </FormControl>
     </div>
