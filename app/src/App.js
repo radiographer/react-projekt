@@ -10,6 +10,7 @@ import Counter from "./pages/Counter";
 import Characters from "./pages/Characters";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import LearnMore from "./pages/LearnMore";
 
 function App() {
   const myDBjson = [
@@ -50,6 +51,7 @@ function App() {
               <Login data={myDBjson} />
             </Route>
           </Switch>
+
           <Footer />
         </Router>
       </div>
