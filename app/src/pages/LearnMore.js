@@ -1,16 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import rickImage from "./images/rick.png";
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
-const Image = styled.div`
-  background-image: url(${rickImage});
-  background-size: cover;
-
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-`;
 const Container = styled.div`
   background-color: #dbf1ee;
   display: flex;
@@ -23,22 +15,56 @@ const Container = styled.div`
   padding-right: 20vw;
 `;
 
-function LearnMore(props) {
-  const personalInfo = {
-    name: "Richard",
-    lastName: "Sanchez",
-    personality:
-      "Rick is a genius scientist, capable of creating complex scientific inventions, including brain-enhancing helmets, dream-invading devices, portals to several different dimensions, various energy weapons and force fields, and the world's first amusement park inside the body of a living human",
-  };
+const ContainerButton = styled.div`
+  background-color: #dbf1ee;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  min-height: 15vh;
+  padding-top: 12vh;
+  padding-left: 2vw;
+`;
+
+const SmallContainer = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  min-width: 30vh;
+  font-size: 40px;
+  padding-left: 20vw;
+  padding-right: 20vw;
+`;
+
+function LearnMore({ species, name, status, type, gender }) {
+  const history = useHistory();
 
   return (
-    <Container>
-      <Image />
-      <Typography variant="h7">
-        Hi, this is {personalInfo.name} {personalInfo.lastName}.{" "}
-      </Typography>
-      <Typography variant="h6">{personalInfo.personality}</Typography>
-    </Container>
+    <>
+      <ContainerButton>
+        <Button
+          size="small"
+          style={{ color: "white", backgroundColor: "#77a8a8" }}
+          onClick={() => history.push("/characters")}
+        >
+          BACK TO CHARACTERS PAGE
+        </Button>
+      </ContainerButton>
+
+      <Container>
+        <Typography variant="h7">Details:</Typography>
+        <SmallContainer>
+          <Typography variant="h6">Name: {name}</Typography>
+          <Typography variant="h6">Species: {species}</Typography>
+          <Typography variant="h6">Status: {status}</Typography>
+          <Typography variant="h6">Type: {type}</Typography>
+          <Typography variant="h6">Gender: {gender}</Typography>
+        </SmallContainer>
+      </Container>
+    </>
   );
 }
 

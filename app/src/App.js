@@ -56,7 +56,15 @@ function App() {
             {allCharacters?.map((item) => {
               return (
                 <Route path={`/${item.name}/${item.id}`}>
-                  <LearnMore />
+                  <LearnMore
+                    name={item.name}
+                    img={item.image}
+                    species={item.species}
+                    status={item.status}
+                    id={item.id}
+                    type={item.type}
+                    gender={item.gender}
+                  />
                 </Route>
               );
             })}
