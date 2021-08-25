@@ -54,7 +54,7 @@ export default function MediaCard({ name, img, species, status, id }) {
         </Typography>
       </CardContent>
 
-      <Link className={classes.link} to={`${url}/${name}/${id}/`}>
+      <Link className={classes.link} to={`/${name}/${id}/`}>
         LearnMore
       </Link>
 

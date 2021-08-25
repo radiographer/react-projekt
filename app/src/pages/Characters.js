@@ -20,7 +20,7 @@ const CharCards = styled.div`
   align-items: center;
 `;
 
-function App() {
+function App({ setAllCharacters }) {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
   const [currentPageUrl, setCurrentPageUrl] = useState(
@@ -41,7 +41,7 @@ function App() {
       const data = await res.json();
       console.log("data", data);
       setCharacters(data.results);
-
+      setAllCharacters(data.results);
       setLoading(false);
       setNextPageUrl(data.info.next);
       setPrevPageUrl(data.info.prev);
@@ -76,6 +76,7 @@ function App() {
         img={char.image}
         species={char.species}
         status={char.status}
+        id={char.id}
       />
     ));
 

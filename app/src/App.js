@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./pages/NavBar";
@@ -13,6 +13,8 @@ import Login from "./pages/Login";
 import LearnMore from "./pages/LearnMore";
 
 function App() {
+  const [allCharacters, setAllCharacters] = useState(null);
+
   const myDBjson = [
     {
       name: "Mateusz",
@@ -42,7 +44,7 @@ function App() {
               <Counter />
             </Route>
             <Route exact path="/characters">
-              <Characters />
+              <Characters setAllCharacters={setAllCharacters} />
             </Route>
             <Route exact path="/register">
               <Register data={myDBjson} />
@@ -50,6 +52,14 @@ function App() {
             <Route exact path="/login">
               <Login data={myDBjson} />
             </Route>
+
+            {allCharacters?.map((item) => {
+              return (
+                <Route path={`/${item.name}/${item.id}`}>
+                  <LearnMore />
+                </Route>
+              );
+            })}
           </Switch>
 
           <Footer />

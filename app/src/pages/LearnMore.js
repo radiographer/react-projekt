@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import rickImage from "./images/rick.png";
 import { Typography } from "@material-ui/core";
+
 const Image = styled.div`
   background-image: url(${rickImage});
   background-size: cover;
