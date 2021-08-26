@@ -18,7 +18,7 @@ export default function App() {
       password: password,
     };
 
-    axios.post("http://localhost:3000/users", { user }).then((res) => {
+    axios.post("http://localhost:3000/users", { ...user }).then((res) => {
       console.log(res);
       console.log(res.data);
     });

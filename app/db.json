@@ -1,20 +1,25 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Mateusz",
       "lastName": "Gabriel",
       "email": "test@test.pl",
-      "password": "haslo123"
+      "password": "haslo123",
+      "id": 1
     },
     {
-      "user": {
-        "name": "Anna",
-        "lastName": "Walczak",
-        "email": "reg@wp.pl",
-        "password": "gdd"
-      },
+      "name": "Rita",
+      "lastName": "Walczak",
+      "email": "rita@wp.pl",
+      "password": "qwerty",
       "id": 2
+    },
+    {
+      "name": "Anna",
+      "lastName": "Walczak",
+      "email": "anna@wp.pl",
+      "password": "qwerty",
+      "id": 3
     }
   ]
 }
