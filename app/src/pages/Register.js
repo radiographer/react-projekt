@@ -1,27 +1,35 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 import { Grid, TextField, Button } from "@material-ui/core";
 
-export default function App({ data }) {
-  console.log("data", data);
-  const [firstName, setFirstName] = useState("");
+export default function App() {
+  const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState("");
 
-  const formHandler = () => {
-    data.push(makeNewUser());
-    console.log("data", data);
-  };
+  const [data, setData] = useState({});
 
-  const makeNewUser = () => {
-    return {
-      name: firstName,
+  const handleSubmit = () => {
+    const data = {
+      name: name,
       lastName: lastName,
       email: email,
       password: password,
     };
+
+    axios
+      .post("http://localhost:3000/users", data)
+      .then((res) => {
+        setData(res.data);
+        setName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -40,8 +48,8 @@ export default function App({ data }) {
             label="First Name"
             fullWidth
             style={{ marginBottom: "2em" }}
-            value={firstName}
-            onChange={(event) => setFirstName(event.target.value)}
+            value={name}
+            onChange={(event) => setName(event.target.value)}
           />
           <TextField
             type="email"
@@ -70,7 +78,7 @@ export default function App({ data }) {
             onChange={(event) => setPassword(event.target.value)}
           />
           <Button
-            onClick={formHandler}
+            onClick={handleSubmit}
             size="large"
             variant="contained"
             color="primary"

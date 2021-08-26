@@ -15,15 +15,6 @@ import LearnMore from "./pages/LearnMore";
 function App() {
   const [allCharacters, setAllCharacters] = useState(null);
 
-  const myDBjson = [
-    {
-      name: "Mateusz",
-      lastName: "Gabriel",
-      email: "test@test.pl",
-      password: "haslo123",
-    },
-  ];
-
   return (
     <div className="page-container">
       <div className="content-wrap">
@@ -47,10 +38,10 @@ function App() {
               <Characters setAllCharacters={setAllCharacters} />
             </Route>
             <Route exact path="/register">
-              <Register data={myDBjson} />
+              <Register />
             </Route>
             <Route exact path="/login">
-              <Login data={myDBjson} />
+              <Login />
             </Route>
 
             {allCharacters?.map((item) => {

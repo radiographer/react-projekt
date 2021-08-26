@@ -47,7 +47,11 @@ function LearnMore({ species, name, status, type, gender }) {
       <ContainerButton>
         <Button
           size="small"
-          style={{ color: "white", backgroundColor: "#77a8a8" }}
+          style={{
+            color: "white",
+            backgroundColor: "#77a8a8",
+            // position: "fixed",
+          }}
           onClick={() => history.push("/characters")}
         >
           BACK TO CHARACTERS PAGE
