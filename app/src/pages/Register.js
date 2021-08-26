@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Grid, TextField, Button } from "@material-ui/core";
 
@@ -7,7 +7,17 @@ export default function App() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [users, setUsers] = useState(null);
 
+  useEffect(() => {
+    axios.get("http://localhost:3000/users").then((result) => {
+      console.log("result from axios", result);
+      setUsers(result.data);
+    });
+  }, []);
+  if (!users) {
+    return <div className="App">Brak danych z backandu</div>;
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
 
