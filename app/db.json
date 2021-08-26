@@ -1,10 +1,20 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "Mateusz",
       "lastName": "Gabriel",
       "email": "test@test.pl",
       "password": "haslo123"
+    },
+    {
+      "user": {
+        "name": "Anna",
+        "lastName": "Walczak",
+        "email": "reg@wp.pl",
+        "password": "gdd"
+      },
+      "id": 2
     }
   ]
 }
