@@ -21,8 +21,7 @@ const useStyles = makeStyles(() => ({
 export default function App() {
   const history = useHistory();
   const classes = useStyles();
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState(null);
@@ -39,8 +38,6 @@ export default function App() {
     event.preventDefault();
 
     const user = {
-      name: name,
-      lastName: lastName,
       email: email,
       password: password,
     };
