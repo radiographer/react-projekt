@@ -65,9 +65,9 @@ function App({ setAllCharacters }) {
 
   const charList = characters
     .filter((char) => {
-      return statusFromSelectInput == null
+      return statusFromSelectInput === null
         ? true
-        : statusFromSelectInput == char.status;
+        : statusFromSelectInput === char.status;
     })
     .map((char) => (
       <CharacterCard

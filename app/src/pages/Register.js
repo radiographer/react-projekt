@@ -11,12 +11,11 @@ export default function App() {
 
   useEffect(() => {
     axios.get("http://localhost:3000/users").then((result) => {
-      console.log("result from axios", result);
       setUsers(result.data);
     });
   }, []);
   if (!users) {
-    return <div className="App">Brak danych z backandu</div>;
+    alert("Error 404. No Data.");
   }
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,11 +26,10 @@ export default function App() {
       email: email,
       password: password,
     };
-
-    axios.post("http://localhost:3000/users", { ...user }).then((res) => {
-      console.log(res);
-      console.log(res.data);
-    });
+    if (users.find((user) => user.email === email)) {
+      alert("Email exists. Go to the login page.");
+    } else
+      axios.post("http://localhost:3000/users", { ...user }).then((res) => {});
   };
 
   return (

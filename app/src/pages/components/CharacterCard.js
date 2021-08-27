@@ -7,12 +7,7 @@ import {
   Typography,
 } from "@material-ui/core";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  useRouteMatch,
-} from "react-router-dom";
+import { Route, Link, useRouteMatch } from "react-router-dom";
 
 import LearnMore from "../LearnMore";
 
@@ -34,7 +29,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard({ name, img, species, status, id }) {
   const classes = useStyles();
-  let { url, path } = useRouteMatch();
+  let { path } = useRouteMatch();
   return (
     <Card className={classes.root}>
       <CardMedia
