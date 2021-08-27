@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Switch,
@@ -8,14 +8,12 @@ import {
   Typography,
 } from "@material-ui/core";
 
-export default function Switches() {
-  const [state, setState] = React.useState({
-    checkedA: true,
-    checkedB: true,
-  });
-
+function SwitchAZ({ handleSwitch }) {
+  const [state, setState] = useState(false);
+  console.log("state", state);
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    setState(event.target.checked);
+    handleSwitch(event.target.checked);
   };
 
   return (
@@ -26,9 +24,9 @@ export default function Switches() {
           <Grid item>a-z</Grid>
           <Grid item>
             <Switch
-              checked={state.checkedA}
+              checked={state}
               onChange={handleChange}
-              name="checkedA"
+              value={state}
               color="default"
               inputProps={{ "aria-label": "checkbox with default color" }}
             />
@@ -39,3 +37,4 @@ export default function Switches() {
     </FormControl>
   );
 }
+export default SwitchAZ;

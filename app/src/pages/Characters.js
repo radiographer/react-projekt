@@ -32,6 +32,7 @@ function App({ setAllCharacters }) {
   const [pages, setPages] = useState();
   const [page, setPage] = useState(1);
   const [statusFromSelectInput, setStatusFromSelectInput] = useState(null);
+  const [sorted, setSorted] = useState(false);
 
   useEffect(() => {
     const url = currentPageUrl;
@@ -80,9 +81,19 @@ function App({ setAllCharacters }) {
       />
     ));
 
+  function switchSorting() {
+    setSorted();
+    if (sorted) {
+      characters.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    if (!sorted) {
+      characters.sort((b, a) => a.name.localeCompare(b.name));
+    }
+  }
+
   return (
     <List>
-      <SwitchAZ />
+      <SwitchAZ handleSwitch={switchSorting} />
       <SelectInput
         status={statusFromSelectInput}
         handleStatus={setStatusFromSelectInput}
