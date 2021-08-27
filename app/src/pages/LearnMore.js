@@ -37,6 +37,7 @@ const SmallContainer = styled.div`
   font-size: 40px;
   padding-left: 20vw;
   padding-right: 20vw;
+  border: solid 1px;
 `;
 
 function LearnMore({ species, name, status, type, gender }) {

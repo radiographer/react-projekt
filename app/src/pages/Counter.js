@@ -40,8 +40,8 @@ const Result = styled.div`
 `;
 
 function Counter({ defaultValue = 0, step = 1 }) {
-  const [value, setValue] = useState(defaultValue);
   const classes = useStyles();
+  const [value, setValue] = useState(defaultValue);
 
   useEffect(() => {});
 

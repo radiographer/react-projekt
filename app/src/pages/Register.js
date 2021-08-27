@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Grid, TextField, Button } from "@material-ui/core";
+import { Grid, TextField, Button, makeStyles } from "@material-ui/core";
 
+const useStyles = makeStyles(() => ({
+  root: {
+    backgroundColor: "#dbf1ee",
+  },
+  button: {
+    color: "white",
+    backgroundColor: "#77a8a8",
+
+    fontFamily: "Montserrat",
+    fontSize: 20,
+    fontWeight: 500,
+    fontStyle: "italic",
+    textDecoration: "none",
+  },
+}));
 export default function App() {
+  const classes = useStyles();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +31,7 @@ export default function App() {
     });
   }, []);
   if (!users) {
-    alert("Error 404. No Data.");
+    return <div>Loading...</div>;
   }
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,7 +49,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <form onSubmit={handleSubmit}>
         <Grid
           container
@@ -43,7 +59,10 @@ export default function App() {
           style={{ minHeight: "100vh" }}
           spacing={5}
         >
-          <Grid item style={{ border: "0.2px solid gray" }}>
+          <Grid
+            item
+            style={{ border: "0.2px solid gray", backgroundColor: "white" }}
+          >
             <Grid
               container
               direction="column"
@@ -59,7 +78,6 @@ export default function App() {
                 onChange={(e) => setName(e.target.value)}
               />
               <TextField
-                type="email"
                 variant="outlined"
                 label="Last Name"
                 fullWidth
@@ -85,10 +103,10 @@ export default function App() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <Button
+                className={classes.button}
                 onClick={handleSubmit}
-                size="large"
+                size="small"
                 variant="contained"
-                color="primary"
               >
                 Register
               </Button>
