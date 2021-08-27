@@ -42,10 +42,13 @@ export default function App() {
       email: email,
       password: password,
     };
-    if (users.find((user) => user.email === email)) {
-      alert("Email exists. Go to the login page.");
-    } else
-      axios.post("http://localhost:3000/users", { ...user }).then((res) => {});
+    if (
+      users.find((user) => user.email === email) &&
+      users.find((user) => user.password === password)
+    ) {
+      alert("Email and password is matched.");
+    }
+    axios.post("http://localhost:3000/users", { ...user }).then((res) => {});
   };
 
   return (

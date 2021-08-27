@@ -97,6 +97,13 @@
       "email": "lukas.w@gmx.com",
       "password": "nowy",
       "id": 14
+    },
+    {
+      "name": "Łukasz",
+      "lastName": "Walczak",
+      "email": "lukas.w@gmx.com",
+      "password": "haslo",
+      "id": 15
     }
   ]
 }

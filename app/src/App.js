@@ -11,6 +11,7 @@ import Characters from "./pages/Characters";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import LearnMore from "./pages/LearnMore";
+import SuccesLogin from "./pages/components/SuccesLogin";
 
 function App() {
   const [allCharacters, setAllCharacters] = useState(null);
@@ -59,6 +60,10 @@ function App() {
                 </Route>
               );
             })}
+
+            <Route exact path="/succes-login">
+              <SuccesLogin />
+            </Route>
           </Switch>
 
           <Footer />

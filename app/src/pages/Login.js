@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import { Grid, TextField, Button, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
@@ -18,6 +19,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 export default function App() {
+  const history = useHistory();
   const classes = useStyles();
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -42,10 +44,12 @@ export default function App() {
       email: email,
       password: password,
     };
-    if (users.find((user) => user.email === email)) {
-      alert("Email exists. Go to the login page.");
-    } else
-      axios.post("http://localhost:3000/users", { ...user }).then((res) => {});
+    if (
+      users.find((user) => user.email === email) &&
+      users.find((user) => user.password === password)
+    ) {
+      history.push("/succes-login");
+    }
   };
 
   return (
