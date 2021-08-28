@@ -20,9 +20,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SelectInput({ status, handleStatus }) {
   const classes = useStyles();
+
   const handlerOnChange = (event) => {
     handleStatus(event.target.value);
   };
+
   return (
     <div>
       <FormControl

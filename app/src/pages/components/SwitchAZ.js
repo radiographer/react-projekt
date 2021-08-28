@@ -7,11 +7,8 @@ import {
   FormControl,
   Typography,
 } from "@material-ui/core";
-import { ThemeProvider } from "styled-components";
 
-function SwitchAZ() {
-  const [state, handleState] = useState(false);
-  console.log("state", state);
+function SwitchAZ({ state, handleState }) {
   const handleChange = (event) => {
     handleState(event.target.checked);
   };

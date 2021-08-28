@@ -104,6 +104,13 @@
       "email": "lukas.w@gmx.com",
       "password": "haslo",
       "id": 15
+    },
+    {
+      "name": "Jacek",
+      "lastName": "Matuszewski",
+      "email": "jacek@.pl",
+      "password": "jacek",
+      "id": 16
     }
   ]
 }
