@@ -7,13 +7,13 @@ import {
   FormControl,
   Typography,
 } from "@material-ui/core";
+import { ThemeProvider } from "styled-components";
 
-function SwitchAZ({ handleSwitch }) {
-  const [state, setState] = useState(false);
+function SwitchAZ() {
+  const [state, handleState] = useState(false);
   console.log("state", state);
   const handleChange = (event) => {
-    setState(event.target.checked);
-    handleSwitch(event.target.checked);
+    handleState(event.target.checked);
   };
 
   return (
@@ -26,7 +26,6 @@ function SwitchAZ({ handleSwitch }) {
             <Switch
               checked={state}
               onChange={handleChange}
-              value={state}
               color="default"
               inputProps={{ "aria-label": "checkbox with default color" }}
             />
