@@ -111,6 +111,13 @@
       "email": "jacek@.pl",
       "password": "jacek",
       "id": 16
+    },
+    {
+      "name": "Rita",
+      "lastName": "Udovichenko",
+      "email": "rita@rita.pl",
+      "password": "rita",
+      "id": 17
     }
   ]
 }

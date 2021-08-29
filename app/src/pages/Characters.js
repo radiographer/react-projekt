@@ -32,7 +32,7 @@ function App({ setAllCharacters }) {
   const [pages, setPages] = useState();
   const [page, setPage] = useState(1);
   const [statusFromSelectInput, setStatusFromSelectInput] = useState(null);
-  const [stateFromSwitch, setStateFromSwitch] = useState(null);
+  const [stateFromSwitch, setStateFromSwitch] = useState(false);
 
   useEffect(() => {
     const url = currentPageUrl;

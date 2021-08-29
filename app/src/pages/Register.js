@@ -26,13 +26,22 @@ export default function App() {
   const [users, setUsers] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/users").then((result) => {
-      setUsers(result.data);
-    });
+    axios
+      .get("http://localhost:3000/users")
+      .then((result) => {
+        setUsers(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
   if (!users) {
     return <div>Loading...</div>;
   }
+  if (!users) {
+    return <div>Now server connection. Please, try later.</div>;
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -48,7 +57,12 @@ export default function App() {
     ) {
       alert("Email and password is matched.");
     }
-    axios.post("http://localhost:3000/users", { ...user }).then((res) => {});
+    axios
+      .post("http://localhost:3000/users", { ...user })
+
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
