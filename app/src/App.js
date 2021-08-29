@@ -17,8 +17,8 @@ function App() {
   const [allCharacters, setAllCharacters] = useState(null);
 
   return (
-    <div className="page-container">
-      <div className="content-wrap">
+    <div>
+      <div>
         <Router>
           <NavBar />
 

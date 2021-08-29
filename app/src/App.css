@@ -12,3 +12,7 @@ a {
   color: #edf0f1;
   text-decoration: none;
 }
+
+html {
+  overflow-x: hidden;
+}
