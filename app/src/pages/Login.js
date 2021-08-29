@@ -17,6 +17,17 @@ const useStyles = makeStyles(() => ({
     fontStyle: "italic",
     textDecoration: "none",
   },
+  error: {
+    backgroundColor: "#dbf1ee",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "80vh",
+    fontSize: 20,
+    paddingLeft: "20vw",
+    paddingRight: "20vw",
+  },
 }));
 export default function App() {
   const history = useHistory();
@@ -32,7 +43,12 @@ export default function App() {
     });
   }, []);
   if (!users) {
-    return <div>Loading...</div>;
+    return (
+      <div className={classes.error}>
+        Connecting to server... please wait or try later. Please, let us know if
+        the problem still persists.
+      </div>
+    );
   }
   const handleSubmit = (event) => {
     event.preventDefault();

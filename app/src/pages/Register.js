@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Grid, TextField, Button, makeStyles } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -15,6 +16,17 @@ const useStyles = makeStyles(() => ({
     fontWeight: 500,
     fontStyle: "italic",
     textDecoration: "none",
+  },
+  error: {
+    backgroundColor: "#dbf1ee",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "80vh",
+    fontSize: 20,
+    paddingLeft: "20vw",
+    paddingRight: "20vw",
   },
 }));
 export default function App() {
@@ -36,10 +48,12 @@ export default function App() {
       });
   }, []);
   if (!users) {
-    return <div>Loading...</div>;
-  }
-  if (!users) {
-    return <div>Now server connection. Please, try later.</div>;
+    return (
+      <div className={classes.error}>
+        Connecting to server... please wait or try later. Please, let us know if
+        the problem still persists.
+      </div>
+    );
   }
 
   const handleSubmit = (event) => {
