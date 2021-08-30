@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Button } from "@material-ui/core";
 import logo from "./images/logo.png";
+// import { green } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: "#77a8a8",
     minWidth: 1220,
+    // [theme.breakpoints.up("md")]: {
+    //   backgroundColor: "green",
+    // },
   },
 
   logo: {
@@ -19,6 +23,15 @@ const useStyles = makeStyles((theme) => ({
   links: {
     marginLeft: theme.spacing(120),
   },
+
+  toolbar: {
+    minHeight: 80,
+  },
+  // breakpoints: {
+  //   values: {
+  //     md: 1000,
+  //   },
+  // },
 }));
 
 function NavBar() {
