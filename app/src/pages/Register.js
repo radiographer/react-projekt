@@ -69,7 +69,9 @@ export default function App() {
       users.find((user) => user.email === email) &&
       users.find((user) => user.password === password)
     ) {
-      alert("Email and password is matched.");
+      alert(
+        "Email address and password are already in use. Please try another."
+      );
     }
     axios
       .post("http://localhost:3000/users", { ...user })
